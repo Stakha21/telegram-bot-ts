@@ -116,24 +116,27 @@ function main() {
 
       await databaseAPI.updateUserData(userName, cryptos);
 
-      return await telegramAPI.sendAnswer(text, chatId, res);
+      await telegramAPI.sendAnswer(text, chatId, res);
+      return;
     } else if (
       receivedMessage === "/deleteFavorite" ||
       receivedMessage === "/addToFavorite"
     ) {
       const text = "You should enter currency name!";
 
-      return await telegramAPI.sendAnswer(text, chatId, res);
+      await telegramAPI.sendAnswer(text, chatId, res);
+      return;
     } else if (
       receivedMessage.startsWith("/deleteFavorite") ||
       receivedMessage.startsWith("/addToFavorite")
     ) {
       const text = "Invalid currency name.";
 
-      return await telegramAPI.sendAnswer(text, chatId, res);
+      await telegramAPI.sendAnswer(text, chatId, res);
+      return;
     } else if (receivedMessage === "/listFavorite") {
       const { cryptos } = await databaseAPI.getUser(userName);
-      const followingCryptos = await coinAPI.getFollowingCurrencies(
+      const followingCryptos = await coinAPI.getCryptoBySymbol(
         cryptos.toString()
       );
       const responseArr = cryptos.map(
