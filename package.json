@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon dist/app.js"
+    "dev": "nodemon dist/app.js",
+    "lint": "eslint . --ext .ts"
   },
   "keywords": [],
   "author": "",
@@ -23,8 +24,6 @@
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
     "eslint": "^7.32.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
