@@ -1,5 +1,5 @@
-import axios from "axios";
-import { CoinList, Coin } from "../interfaces/coinmarket-interface";
+import axios from 'axios';
+import { CoinList, Coin } from '../interfaces/coinmarket-interface';
 
 class CoinAPI {
     async getCryptoList() {
@@ -9,7 +9,7 @@ class CoinAPI {
                 limit: 20,
             },
             headers: {
-                "X-CMC_PRO_API_KEY": process.env.COIN_KEY!,
+                'X-CMC_PRO_API_KEY': process.env.COIN_KEY!,
             },
         })
             .then((res) => res.data.data)
@@ -25,7 +25,7 @@ class CoinAPI {
                 symbol,
             },
             headers: {
-                "X-CMC_PRO_API_KEY": process.env.COIN_KEY!,
+                'X-CMC_PRO_API_KEY': process.env.COIN_KEY!,
             },
         })
             .then((res) => res.data.data)

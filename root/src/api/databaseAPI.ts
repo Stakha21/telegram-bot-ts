@@ -1,5 +1,5 @@
-import { userModel } from "../schema/cryptoSchema.js";
-import User from "../interfaces/database-interface";
+import { userModel } from '../schema/cryptoSchema.js';
+import User from '../interfaces/database-interface';
 
 class DatabaseAPI {
     async createUser(userName: string) {
